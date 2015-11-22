@@ -9,7 +9,7 @@ if (!RedactorPlugins) var RedactorPlugins = {};
 			{
 				this.fullscreen.isOpen = false;
 
-				var button = this.button.add('fullscreen', 'Fullscreen');
+				var button = this.button.add('fullscreen', 'Полный экран');
 				this.button.addCallback(button, this.fullscreen.toggle);
 
 				if (this.opts.fullscreen) this.fullscreen.toggle();
@@ -41,6 +41,7 @@ if (!RedactorPlugins) var RedactorPlugins = {};
 				this.$box.appendTo(document.body);
 
 				this.$box.addClass('redactor-box-fullscreen');
+				$('.add-post').addClass('add-post-fullscreen');
 				$('body, html').css('overflow', 'hidden');
 
 				this.fullscreen.resize();

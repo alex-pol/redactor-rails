@@ -8,7 +8,7 @@ $.Redactor.opts.langs['ru'] = {
 	link_insert: 'Вставить ссылку ...',
 	link_edit: 'Изменить ссылку',
 	unlink: 'Удалить ссылку',
-	formatting: 'Форматирование',
+	formatting: 'Размер текста',
 	paragraph: 'Обычный текст',
 	quote: 'Цитата',
 	code: 'Код',
