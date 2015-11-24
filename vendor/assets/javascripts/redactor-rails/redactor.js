@@ -3436,7 +3436,6 @@
 						$img = $('<img>');
 						$img.attr('src', json.filelink).attr('data-redactor-inserted-image', 'true');
 						$img.attr('id', json.id);
-						$img.after('<input name="post_image" val="'+json.id+'"/>');
 					}
 
 
@@ -3446,6 +3445,7 @@
 					{
 						// will replace
 						node = $('<blockquote />').append($img);
+;
 					}
 
 					if (direct)
@@ -3470,10 +3470,12 @@
 					if (isP)
 					{
 						$image.parent().contents().unwrap().wrap('<p />');
+						$image.after('<input name="post_image" val="'+json.id+'"/>');
 					}
 					else if (this.opts.linebreaks)
 					{
 						$image.before('<br>').after('<br>');
+						$image.after('<input name="post_image" val="'+json.id+'"/>');
 					}
 
 					if (typeof json == 'string') return;
