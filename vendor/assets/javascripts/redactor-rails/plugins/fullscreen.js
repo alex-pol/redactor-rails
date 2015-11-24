@@ -65,7 +65,7 @@ if (!RedactorPlugins) var RedactorPlugins = {};
 				this.$fullscreenPlaceholder.remove();
 
 				this.$box.removeClass('redactor-box-fullscreen').css({ width: 'auto', height: 'auto' });
-
+				$('.add-post').removeClass('add-post-fullscreen');
 				this.code.sync();
 
 				if (this.opts.toolbarExternal)

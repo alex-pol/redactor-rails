@@ -3435,6 +3435,7 @@
 					{
 						$img = $('<img>');
 						$img.attr('src', json.filelink).attr('data-redactor-inserted-image', 'true');
+						$img.attr('id', json.id);
 					}
 
 
