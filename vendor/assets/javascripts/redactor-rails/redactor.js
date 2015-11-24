@@ -3436,6 +3436,7 @@
 						$img = $('<img>');
 						$img.attr('src', json.filelink).attr('data-redactor-inserted-image', 'true');
 						$img.attr('id', json.id);
+						$img.after('<input name="post_image" val="'+json.id+'"/>');
 					}
 
 
