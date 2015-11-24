@@ -3470,12 +3470,12 @@
 					if (isP)
 					{
 						$image.parent().contents().unwrap().wrap('<p />');
-						$image.after('<input name="post_image" val="'+json.id+'"/>');
+						$image.after('<input type="hidden" name="post_image" value="'+json.id+'"/>');
 					}
 					else if (this.opts.linebreaks)
 					{
 						$image.before('<br>').after('<br>');
-						$image.after('<input name="post_image" val="'+json.id+'"/>');
+						$image.after('<input type="hidden" name="post_image" value="'+json.id+'"/>');
 					}
 
 					if (typeof json == 'string') return;
