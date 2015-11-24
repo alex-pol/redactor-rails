@@ -3469,7 +3469,7 @@
 
 					if (isP)
 					{
-						$image.parent().contents().unwrap().wrap('<p class="post__image-wrap" />');
+						$image.parent().contents().unwrap().wrap('<p />');
 						$image.after('<input type="hidden" name="post_image[]" value="'+json.id+'"/>');
 					}
 					else if (this.opts.linebreaks)
