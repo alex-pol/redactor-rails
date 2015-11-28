@@ -11,7 +11,6 @@ if (!RedactorPlugins) var RedactorPlugins = {};
 
 				var button = this.button.add('fullscreen', 'Полный экран');
 				this.button.addCallback(button, this.fullscreen.toggle);
-
 				if (this.opts.fullscreen) this.fullscreen.toggle();
 			},
 			enable: function()
@@ -43,11 +42,11 @@ if (!RedactorPlugins) var RedactorPlugins = {};
 
 				this.$box.addClass('redactor-box-fullscreen');
 				$('.add-post').addClass('add-post-fullscreen');
-				$('body, html').css('overflow', 'hidden');
+				$('html').css('overflow', 'hidden');
 
 				this.fullscreen.resize();
 				$(window).on('resize.redactor.fullscreen', $.proxy(this.fullscreen.resize, this));
-				$(document).scrollTop(0, 0);
+				// $(document).scrollTop(0, 0);
 
 				$('.redactor-toolbar-tooltip').hide();
 				this.$editor.focus();
