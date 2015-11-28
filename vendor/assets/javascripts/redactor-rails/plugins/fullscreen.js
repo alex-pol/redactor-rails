@@ -19,6 +19,7 @@ if (!RedactorPlugins) var RedactorPlugins = {};
 				this.button.changeIcon('fullscreen', 'normalscreen');
 				this.button.setActive('fullscreen');
 				this.fullscreen.isOpen = true;
+				$('.redactor-toolbar').append('<button class="button answerSubmit">Создать</button>');
 
 				if (this.opts.toolbarExternal)
 				{
@@ -54,6 +55,7 @@ if (!RedactorPlugins) var RedactorPlugins = {};
 			},
 			disable: function()
 			{
+				$('.answerSubmit').remove();
 				this.button.removeIcon('fullscreen', 'normalscreen');
 				this.button.setInactive('fullscreen');
 				this.fullscreen.isOpen = false;
