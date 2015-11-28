@@ -60,7 +60,7 @@ if (!RedactorPlugins) var RedactorPlugins = {};
 				this.fullscreen.isOpen = false;
 
 				$(window).off('resize.redactor.fullscreen');
-				$('body, html').css('overflow', '');
+				$('html').css('overflow', '');
 
 				this.$box.insertBefore(this.$fullscreenPlaceholder);
 				this.$fullscreenPlaceholder.remove();
