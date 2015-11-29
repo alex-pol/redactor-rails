@@ -1,5 +1,4 @@
 class RedactorRails::PicturesController < ApplicationController
-  before_filter :redactor_authenticate_user!
 
   def index
     @pictures = RedactorRails.picture_model.where(
@@ -12,10 +11,6 @@ class RedactorRails::PicturesController < ApplicationController
 
     file = params[:file]
     @picture.data = RedactorRails::Http.normalize_param(file, request)
-    if @picture.has_attribute?(:"#{RedactorRails.devise_user_key}")
-      @picture.send("#{RedactorRails.devise_user}=", redactor_current_user)
-      @picture.assetable = redactor_current_user
-    end
 
     if @picture.save
       render json: { link: @picture.url(:content), id: @picture.id }
@@ -26,9 +21,4 @@ class RedactorRails::PicturesController < ApplicationController
 
   private
 
-  def redactor_authenticate_user!
-    if RedactorRails.picture_model.new.has_attribute?(RedactorRails.devise_user)
-      super
-    end
-  end
 end
